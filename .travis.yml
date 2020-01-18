@@ -1,2 +1,12 @@
 language: java
 jdk: openjdk11
+
+addons:
+  sonarcloud:
+    organization: "mygoditsfull0fstars"
+    token:
+      secure: "QT69+cdVGSuuOnlwyKqWwCZ4PxKZxKfVjGY60MmzUlFnSs2J40DtRP/CtOJd2XV/6FVQNeAYKssRdQVtHGe9Bs/DN3r6xaWFv+Ee5008ucO1DtcSz+3nv6IjB/I9LkWjy4GwJh1IxYbDiGdd0hrVivHMkv5nxjJ1nYCQioYlE9s7yp5gPPCGj2OXAlgZAI1R3FXXQH9GfVOw0Dw3lpWIxTjjeCLXH4vFfASTLDxwKq35SIHNarvPE4SVjOiyI8SYajN9ZQ90S836ztzuZ+ovzElbjeWpDgM4MUxzZ9HIMc5Y3DEdRvZnjKkvKXu3puEtETx7TlPgcGQKzpyDf4c1Nrb5veJbG2DxZvHqqr7OfhzZQ6Z+qy2jY5o8QHCgTjbFNcTi4oHk5rIGrJPtV5CFb0TpQbYud5eO4irGWq1AXeV803qVPb9ZCBku3wlqSfAfcAGZVaZB6OLHl4sydCUTygDEoK19kaYDiJk5huXmqBCUkcV27ShU43bIWnFO7UTPoEpb0L+cW0tB/o5ycUeIRO65F/Q+r8ECIdLV5XGWlX9p1Tq3aVW3bYcmkMFvUDMLQpCPBZi09Q6nM7lmjds3kxzIljvQa6D3XoCnIiqEOMxAr2g+RZuWlXRQfpQE3QoE4qpgnS59t/hN8mEUk1FUl+TaZ6W7AJ3+98ijyf2zKJg="
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=MyGodItsFull0fStars_filtr_server
