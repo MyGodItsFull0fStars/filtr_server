@@ -1,9 +1,6 @@
 package io.gottaofast;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -34,7 +31,7 @@ public class GreetingController {
      * @return a new <code>Greeting</code> object with <code>id</code> and <code>content</code> attributes.
      * The object data will be written directly to the HTTP response as JSON.
      */
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+    @GetMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
