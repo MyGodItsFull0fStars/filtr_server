@@ -1,5 +1,9 @@
 package io.gottaofast.filters.controller;
 
+import io.gottaofast.filters.filter.impl.Blur;
+import io.gottaofast.filters.filter.impl.DeepFry;
+import io.gottaofast.filters.filter.impl.EdgeDetection;
+import io.gottaofast.filters.filter.impl.Greyscale;
 import io.gottaofast.filters.model.FilterModel;
 import io.gottaofast.filters.model.setting.FilterSetting;
 import io.gottaofast.filters.model.setting.FilterSettingCheckbox;
@@ -30,25 +34,11 @@ public class FilterController {
     @GetMapping("/filters")
     public List<FilterModel> filters() {
 
-        FilterSetting settingCheckbox = new FilterSettingCheckbox("CheckBox1", true);
-        FilterSetting settingCheckbox2 = new FilterSettingCheckbox("CheckBox2", false);
-
-        FilterModel fm1 = new FilterModel(1, "TestFilter1", "https://i.redd.it/cmi9z289res11.jpg");
-        fm1.addFilterSetting(settingCheckbox);
-        fm1.addFilterSetting(settingCheckbox2);
-
-        FilterSetting settingCheckbox3 = new FilterSettingCheckbox("CheckBox3", true);
-        FilterSetting settingCheckbox4 = new FilterSettingCheckbox("CheckBox4", false);
-        FilterSetting settingSlider = new FilterSettingSlider("slider1", "minVal", "maxVal", 0, 10, 1, 1);
-
-        FilterModel fm2 = new FilterModel(2, "TestFilter2", "https://i.redd.it/gt1lnbsor2c41.jpg");
-        fm2.addFilterSetting(settingCheckbox3);
-        fm2.addFilterSetting(settingCheckbox4);
-        fm2.addFilterSetting(settingSlider);
-
         ArrayList<FilterModel> filterList = new ArrayList<>();
-        filterList.add(fm1);
-        filterList.add(fm2);
+        filterList.add(new Greyscale().getFilterModel());
+        filterList.add(new DeepFry().getFilterModel());
+        filterList.add(new EdgeDetection().getFilterModel());
+        filterList.add(new Blur().getFilterModel());
 
         return filterList;
     }

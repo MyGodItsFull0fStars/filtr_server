@@ -4,17 +4,22 @@ import io.gottaofast.filters.filter.Filters;
 import io.gottaofast.filters.filter.AbstractFilter;
 import io.gottaofast.filters.model.FilterModel;
 import io.gottaofast.filters.model.setting.FilterSetting;
+import io.gottaofast.filters.model.setting.FilterSettingSlider;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Greyscale extends AbstractFilter {
-    private static final String NAME = "Greyscale";
+public class Blur extends AbstractFilter {
+    private static final String NAME = "Blur";
     private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
 
-    public Greyscale() {
-        filterModel = new FilterModel(Filters.GREYSCALE, NAME, PREVIEW_URL, new ArrayList<>());
+    public Blur() {
+        FilterSettingSlider intensity = new FilterSettingSlider("Intensity", "0", "100", 0, 100, 50, 5);
+        ArrayList<FilterSetting> settings = new ArrayList<>();
+        settings.add(intensity);
+
+        filterModel = new FilterModel(Filters.BLUR, NAME, PREVIEW_URL, settings);
     }
 
     @Override

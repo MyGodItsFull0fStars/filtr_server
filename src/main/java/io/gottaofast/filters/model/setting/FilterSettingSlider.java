@@ -1,7 +1,6 @@
 package io.gottaofast.filters.model.setting;
 
 public class FilterSettingSlider extends FilterSetting {
-    private static final int FILTER_TYPE_SLIDER = 2; // TODO: maybe change to enum?
 
     private final String minText;
     private final String maxText;
@@ -13,7 +12,7 @@ public class FilterSettingSlider extends FilterSetting {
     private final double steps;
 
     public FilterSettingSlider(String name, String minText, String maxText, double minValue, double maxValue, double actValue, double steps) {
-        super(FILTER_TYPE_SLIDER, name);
+        super(SettingTypes.SLIDER, name);
         this.minText = minText;
         this.maxText = maxText;
         this.minValue = minValue;
