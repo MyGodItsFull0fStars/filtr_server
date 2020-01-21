@@ -33,7 +33,7 @@ public class FilterController {
         FilterSetting settingCheckbox = new FilterSettingCheckbox("CheckBox1", true);
         FilterSetting settingCheckbox2 = new FilterSettingCheckbox("CheckBox2", false);
 
-        FilterModel fm1 = new FilterModel(1, "TestFilter1");
+        FilterModel fm1 = new FilterModel(1, "TestFilter1", "https://i.redd.it/cmi9z289res11.jpg");
         fm1.addFilterSetting(settingCheckbox);
         fm1.addFilterSetting(settingCheckbox2);
 
@@ -41,7 +41,7 @@ public class FilterController {
         FilterSetting settingCheckbox4 = new FilterSettingCheckbox("CheckBox4", false);
         FilterSetting settingSlider = new FilterSettingSlider("slider1", "minVal", "maxVal", 0, 10, 1, 1);
 
-        FilterModel fm2 = new FilterModel(2, "TestFilter2");
+        FilterModel fm2 = new FilterModel(2, "TestFilter2", "https://i.redd.it/gt1lnbsor2c41.jpg");
         fm2.addFilterSetting(settingCheckbox3);
         fm2.addFilterSetting(settingCheckbox4);
         fm2.addFilterSetting(settingSlider);
