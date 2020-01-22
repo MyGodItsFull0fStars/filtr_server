@@ -1,4 +1,4 @@
-package io.gottaofast.images;
+package io.gottaofast.images.model.response;
 
 import java.util.UUID;
 

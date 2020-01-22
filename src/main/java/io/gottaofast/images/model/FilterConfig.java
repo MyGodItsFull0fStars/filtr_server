@@ -1,4 +1,4 @@
-package io.gottaofast.images;
+package io.gottaofast.images.model;
 
 public class FilterConfig {
     private final String name;

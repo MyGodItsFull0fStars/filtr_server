@@ -1,6 +1,7 @@
-package io.gottaofast.images;
+package io.gottaofast.images.model.request;
 
 import io.gottaofast.filters.filter.Filters;
+import io.gottaofast.images.model.FilterConfig;
 
 import java.util.List;
 
