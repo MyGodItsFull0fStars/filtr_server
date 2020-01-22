@@ -10,7 +10,7 @@ import java.util.Base64;
 
 public class ImageProcessor {
     private static final String IMAGE_DIRECTORY_PATH = "image_storage";
-    private static final String IMAGE_FILE_TYPE = "png"; // use png internally to keep compression artifacts low
+    private static final String IMAGE_FILE_TYPE = "jpg"; // use png internally to keep compression artifacts low
 
     public static BufferedImage base64ToImage(String image) {
         BufferedImage bufferedImage = null;

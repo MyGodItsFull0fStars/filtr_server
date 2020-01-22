@@ -19,6 +19,28 @@ public class Greyscale extends AbstractFilter {
 
     @Override
     public BufferedImage apply(BufferedImage image, List<FilterSetting> settings) {
-        return null;
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int currentPixel = image.getRGB(x, y);
+
+                int alpha = (currentPixel >> 24) & 0xff;
+                int red = (currentPixel >> 16) & 0xff;
+                int green = (currentPixel >> 8) & 0xff;
+                int blue = currentPixel & 0xff;
+
+                // get average over all color channels
+                int avg = (red + green + blue) / 3;
+
+                //replace RGB value with avg
+                currentPixel = (alpha << 24) | (avg << 16) | (avg << 8) | avg;
+
+                image.setRGB(x, y, currentPixel);
+            }
+        }
+
+        return image;
     }
 }
