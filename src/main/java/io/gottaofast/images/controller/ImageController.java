@@ -1,11 +1,10 @@
 package io.gottaofast.images.controller;
 
-import io.gottaofast.filters.filter.Filters;
-import io.gottaofast.images.ProcessRequest;
-import io.gottaofast.images.ProcessResponse;
+import io.gottaofast.images.model.request.ProcessRequest;
+import io.gottaofast.images.model.response.IDResponse;
+import io.gottaofast.images.model.response.ProcessResponse;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -22,6 +21,9 @@ public class ImageController {
     @PostMapping("/images/process")
     public ProcessResponse process(@RequestBody ProcessRequest payload) {
         base64Image = payload.getImage();
+//        System.out.println(new String(Base64.getDecoder().decode(base64Image.getBytes())));
+//        byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
+
         // image UUID for retrieval later
         ProcessResponse response = new ProcessResponse(UUID.randomUUID());
         // TODO: send UUID back, get filter configuration, filter image, store filtered image at said uuid
@@ -30,7 +32,7 @@ public class ImageController {
     }
 
     @GetMapping(value = "images/id/{imageID}")
-    public String retrieve(@PathVariable String imageID) {
-        return String.format("{\"b64\" : \"%s\"}", base64Image);
+    public IDResponse retrieve(@PathVariable String imageID) {
+        return new IDResponse(base64Image);
     }
 }
