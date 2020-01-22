@@ -22,7 +22,7 @@ public class ImageProcessor {
             bufferedImage = ImageIO.read(bis);
             bis.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            return new BufferedImage(0, 0, 0);
         }
 
         return bufferedImage;
@@ -33,11 +33,11 @@ public class ImageProcessor {
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         try {
-            ImageIO.write(image,IMAGE_FILE_TYPE,  bos);
+            ImageIO.write(image, IMAGE_FILE_TYPE, bos);
             imageBytes = bos.toByteArray();
             bos.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            return "";
         }
 
         return Base64.getEncoder().encodeToString(imageBytes);
@@ -49,7 +49,6 @@ public class ImageProcessor {
         try {
             ImageIO.write(image, IMAGE_FILE_TYPE, outFile);
         } catch (IOException e) {
-            e.printStackTrace();
             return false;
         }
 
@@ -62,7 +61,7 @@ public class ImageProcessor {
         try {
             image = ImageIO.read(new File(String.format("%s/%s.%s", IMAGE_DIRECTORY_PATH, imageID, IMAGE_FILE_TYPE)));
         } catch (IOException e) {
-            e.printStackTrace();
+            return new BufferedImage(0, 0, 0);
         }
         return image;
     }
