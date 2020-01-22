@@ -5,15 +5,16 @@ public abstract class FilterSetting {
     private final String name;
 
     public FilterSetting(SettingTypes type, String name) {
+        if (name == null) name = "";
         this.type = type;
         this.name = name;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public SettingTypes getType() {
+    public final SettingTypes getType() {
         return type;
     }
 }
