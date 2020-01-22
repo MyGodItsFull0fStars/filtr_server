@@ -5,9 +5,6 @@ import io.gottaofast.filters.filter.impl.DeepFry;
 import io.gottaofast.filters.filter.impl.EdgeDetection;
 import io.gottaofast.filters.filter.impl.Greyscale;
 import io.gottaofast.filters.model.FilterModel;
-import io.gottaofast.filters.model.setting.FilterSetting;
-import io.gottaofast.filters.model.setting.FilterSettingCheckbox;
-import io.gottaofast.filters.model.setting.FilterSettingSlider;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
