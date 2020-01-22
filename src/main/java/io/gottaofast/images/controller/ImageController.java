@@ -1,11 +1,9 @@
 package io.gottaofast.images.controller;
 
-import io.gottaofast.filters.filter.Filters;
 import io.gottaofast.images.ProcessRequest;
 import io.gottaofast.images.ProcessResponse;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 import java.util.UUID;
 
 @RestController
