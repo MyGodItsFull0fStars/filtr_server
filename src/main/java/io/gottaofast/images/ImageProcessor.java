@@ -66,4 +66,12 @@ public class ImageProcessor {
         }
         return image;
     }
+
+    public static boolean saveImageToFiles(String base64Image, String imageID) {
+        return saveImageToFiles(base64ToImage(base64Image), imageID);
+    }
+
+    public static String loadBase64ImageFromFiles(String imageID) {
+        return imageToBase64(loadImageFromFiles(imageID));
+    }
 }
