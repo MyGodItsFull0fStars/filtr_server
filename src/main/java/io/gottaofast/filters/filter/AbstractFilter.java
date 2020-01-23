@@ -6,6 +6,9 @@ import io.gottaofast.filters.model.setting.FilterSetting;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+/**
+ * Abstract class with some common methods all filters will inherit from
+ */
 public abstract class AbstractFilter {
 
     protected FilterModel filterModel;

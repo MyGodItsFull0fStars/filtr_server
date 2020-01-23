@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * In Spring's approach to building RESTful web services, HTTP requests are handled by a controller.
  * These components are easily identified by the <code>@RestController</code> annotation,
- * and the <code>Filter</code> below handles <code>GET</code> requests for
+ * and the <code>filters()</code> method below handles <code>GET</code> requests for
  * <code>/filters</code> by returning a list of all available <code>FilterModel</code> classes.
  */
 @RestController

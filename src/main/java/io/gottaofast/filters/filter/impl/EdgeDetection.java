@@ -11,6 +11,9 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A filter that tries to detect edges in images
+ */
 public class EdgeDetection extends AbstractFilter {
     private static final String NAME = "Edge Detection";
     private static final String PREVIEW_URL = "http://www.ctralie.com/Teaching/EdgeCornerBlob/lenatl0.05/image.png";

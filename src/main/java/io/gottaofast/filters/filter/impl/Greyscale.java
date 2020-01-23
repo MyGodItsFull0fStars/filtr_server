@@ -9,6 +9,10 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * A filter that converts a colored image to greyscale
+ */
 public class Greyscale extends AbstractFilter {
     private static final String NAME = "Greyscale";
     private static final String PREVIEW_URL = "https://qph.fs.quoracdn.net/main-qimg-28267274974ef4445d4e0464e2d382f1.webp";
@@ -26,6 +30,7 @@ public class Greyscale extends AbstractFilter {
             for (int x = 0; x < width; x++) {
                 int currentPixel = image.getRGB(x, y);
 
+                // get ARGB values of the pixel
                 int alpha = (currentPixel >> 24) & 0xff;
                 int red = (currentPixel >> 16) & 0xff;
                 int green = (currentPixel >> 8) & 0xff;

@@ -10,6 +10,9 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LMAO YEET *dabs on dem haters*
+ */
 public class DeepFry extends AbstractFilter {
     private static final String NAME = "Deep Fry";
     private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
@@ -18,8 +21,6 @@ public class DeepFry extends AbstractFilter {
         FilterSettingSlider jpegRepetitions = new FilterSettingSlider("JPEG Repetitions", "0", "10", 0, 10, 2, 1);
         FilterSettingSlider jpegQuality = new FilterSettingSlider("JPEG Quality", "0", "100", 0, 100, 50, 5);
         FilterSettingSlider sharpen = new FilterSettingSlider("Sharpen", "0", "100", 0, 100, 50, 5);
-
-
 
         ArrayList<FilterSetting> settings = new ArrayList<>();
         settings.add(jpegQuality);

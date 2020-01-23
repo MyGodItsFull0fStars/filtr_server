@@ -10,6 +10,9 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A filter that blurs the input image
+ */
 public class Blur extends AbstractFilter {
     private static final String NAME = "Blur";
     private static final String PREVIEW_URL = "https://www.lunapic.com/editor/premade/blur.gif";
