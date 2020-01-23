@@ -4,6 +4,8 @@ import io.gottaofast.filters.filter.AbstractFilter;
 import io.gottaofast.filters.filter.Filters;
 import io.gottaofast.filters.model.FilterModel;
 import io.gottaofast.filters.model.setting.FilterSetting;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -18,12 +20,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Jpegify extends AbstractFilter {
+    Logger logger = LoggerFactory.getLogger(Jpegify.class);
 
     private static final String NAME = "JPEG-ify";
     private static final String PREVIEW_URL = "https://upload.wikimedia.org/wikipedia/commons/b/b4/Asterisk_with_jpg-artefacts.png";
 
     public Jpegify() {
-
         filterModel = new FilterModel(Filters.JPEGIFY, NAME, PREVIEW_URL, new ArrayList<>());
     }
 
