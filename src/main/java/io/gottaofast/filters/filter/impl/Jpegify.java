@@ -6,6 +6,8 @@ import io.gottaofast.filters.model.FilterModel;
 import io.gottaofast.filters.model.setting.FilterSetting;
 import io.gottaofast.filters.model.setting.FilterSettingSlider;
 import io.gottaofast.images.model.FilterConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -20,12 +22,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Jpegify extends AbstractFilter {
+    Logger logger = LoggerFactory.getLogger(Jpegify.class);
 
     private static final String NAME = "JPEG-ify";
     private static final String PREVIEW_URL = "https://upload.wikimedia.org/wikipedia/commons/b/b4/Asterisk_with_jpg-artefacts.png";
 
     public Jpegify() {
-
         filterModel = new FilterModel(Filters.JPEGIFY, NAME, PREVIEW_URL, new ArrayList<>());
     }
 
@@ -41,11 +43,12 @@ public class Jpegify extends AbstractFilter {
 
         try {
             writer.setOutput(ImageIO.createImageOutputStream(bos));
-            writer.write(null, new IIOImage(image ,null,null),iwp);
+            writer.write(null, new IIOImage(image, null, null), iwp);
             writer.dispose();
             return ImageIO.read(new ByteArrayInputStream(bos.toByteArray()));
         } catch (IOException e) {
             writer.dispose();
+            logger.error("[apply] - error writing image: ", e);
             return new BufferedImage(0, 0, 0);
         }
     }
