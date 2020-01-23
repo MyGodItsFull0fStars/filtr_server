@@ -1,6 +1,7 @@
 package io.gottaofast.filters.model.setting;
 
 public abstract class FilterSetting {
+
     private final SettingTypes type;
     private final String name;
 
