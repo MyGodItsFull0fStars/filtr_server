@@ -16,6 +16,13 @@ public class ImageProcessor {
     private static final String IMAGE_FILE_TYPE = "jpg"; // use png internally to keep compression artifacts low
 
     /**
+     * Use a private constructor as this is simply a utility class not meant to be instantiated
+     */
+    private ImageProcessor() {
+        throw new IllegalStateException("Utility class");
+    }
+
+    /**
      * Decodes a base64 String into a BufferedImage
      * @param image The base64 encoded image
      * @return  The decoded image or a BufferedImage of size 0x0 in case of an error

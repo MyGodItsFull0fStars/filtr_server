@@ -17,6 +17,7 @@ import java.util.UUID;
  */
 @RestController
 public class ImageController {
+    private static final String FILE_SUFFIX_ORIGINAL = "_original";
     /**
      * The <code>@PostMapping</code> annotation ensures that HTTP POST requests to <code>/images/process</code>
      * are mapped to the <code>process()</code> method.
@@ -30,16 +31,16 @@ public class ImageController {
 
         // image UUID for retrieval later
         ProcessResponse response = new ProcessResponse(UUID.randomUUID());
-        ImageProcessor.saveImageToFiles(payload.getImage(), response.getImgID().toString()+"_original");
+        ImageProcessor.saveImageToFiles(payload.getImage(), response.getImgID().toString()+FILE_SUFFIX_ORIGINAL);
 
         Filters chosenFilter = payload.getFilterID();
         if (chosenFilter == Filters.GREYSCALE) {
             Greyscale g = new Greyscale();
-            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+"_original"), null);
+            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+FILE_SUFFIX_ORIGINAL), null);
             ImageProcessor.saveImageToFiles(filteredImage, response.getImgID().toString());
         } else if (chosenFilter == Filters.JPEGIFY) {
             Jpegify g = new Jpegify();
-            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+"_original"), null);
+            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+FILE_SUFFIX_ORIGINAL), null);
             ImageProcessor.saveImageToFiles(filteredImage, response.getImgID().toString());
         }
 
