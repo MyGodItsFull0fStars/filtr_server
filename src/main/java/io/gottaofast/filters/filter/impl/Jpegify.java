@@ -42,12 +42,11 @@ public class Jpegify extends AbstractFilter {
         try {
             writer.setOutput(ImageIO.createImageOutputStream(bos));
             writer.write(null, new IIOImage(image ,null,null),iwp);
+            writer.dispose();
             return ImageIO.read(new ByteArrayInputStream(bos.toByteArray()));
         } catch (IOException e) {
-            e.printStackTrace();
+            writer.dispose();
+            return new BufferedImage(0, 0, 0);
         }
-        writer.dispose();
-
-        return new BufferedImage(0, 0, 0);
     }
 }
