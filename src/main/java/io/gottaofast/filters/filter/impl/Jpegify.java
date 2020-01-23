@@ -4,8 +4,6 @@ import io.gottaofast.filters.filter.AbstractFilter;
 import io.gottaofast.filters.filter.Filters;
 import io.gottaofast.filters.model.FilterModel;
 import io.gottaofast.filters.model.setting.FilterSetting;
-import io.gottaofast.filters.model.setting.FilterSettingSlider;
-import io.gottaofast.images.model.FilterConfig;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
