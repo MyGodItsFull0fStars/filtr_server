@@ -1,9 +1,6 @@
 package io.gottaofast.filters.controller;
 
-import io.gottaofast.filters.filter.impl.Blur;
-import io.gottaofast.filters.filter.impl.DeepFry;
-import io.gottaofast.filters.filter.impl.EdgeDetection;
-import io.gottaofast.filters.filter.impl.Greyscale;
+import io.gottaofast.filters.filter.impl.*;
 import io.gottaofast.filters.model.FilterModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +33,7 @@ public class FilterController {
         filterList.add(new DeepFry().getFilterModel());
         filterList.add(new EdgeDetection().getFilterModel());
         filterList.add(new Blur().getFilterModel());
+        filterList.add(new Jpegify().getFilterModel());
 
         return filterList;
     }

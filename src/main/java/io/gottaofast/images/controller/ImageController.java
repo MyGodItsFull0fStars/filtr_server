@@ -1,6 +1,8 @@
 package io.gottaofast.images.controller;
 
+import io.gottaofast.filters.filter.Filters;
 import io.gottaofast.filters.filter.impl.Greyscale;
+import io.gottaofast.filters.filter.impl.Jpegify;
 import io.gottaofast.images.ImageProcessor;
 import io.gottaofast.images.model.request.ProcessRequest;
 import io.gottaofast.images.model.response.IDResponse;
@@ -30,10 +32,16 @@ public class ImageController {
         ProcessResponse response = new ProcessResponse(UUID.randomUUID());
         ImageProcessor.saveImageToFiles(payload.getImage(), response.getImgID().toString()+"_original");
 
-        //Hardcode Greyscale for now
-        Greyscale g = new Greyscale();
-        BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+"_original"), null);
-        ImageProcessor.saveImageToFiles(filteredImage, response.getImgID().toString());
+        Filters chosenFilter = payload.getFilterID();
+        if (chosenFilter == Filters.GREYSCALE) {
+            Greyscale g = new Greyscale();
+            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+"_original"), null);
+            ImageProcessor.saveImageToFiles(filteredImage, response.getImgID().toString());
+        } else if (chosenFilter == Filters.JPEGIFY) {
+            Jpegify g = new Jpegify();
+            BufferedImage filteredImage = g.apply(ImageProcessor.loadImageFromFiles(response.getImgID().toString()+"_original"), null);
+            ImageProcessor.saveImageToFiles(filteredImage, response.getImgID().toString());
+        }
 
         return response;
     }
