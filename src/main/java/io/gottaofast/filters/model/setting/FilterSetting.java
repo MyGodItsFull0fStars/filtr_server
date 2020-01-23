@@ -4,6 +4,7 @@ package io.gottaofast.filters.model.setting;
  * Configuration for a specific filter setting
  */
 public abstract class FilterSetting {
+
     private final SettingTypes type;
     private final String name;
 
