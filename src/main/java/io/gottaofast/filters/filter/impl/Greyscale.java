@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Greyscale extends AbstractFilter {
     private static final String NAME = "Greyscale";
-    private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
+    private static final String PREVIEW_URL = "https://qph.fs.quoracdn.net/main-qimg-28267274974ef4445d4e0464e2d382f1.webp";
 
     public Greyscale() {
         filterModel = new FilterModel(Filters.GREYSCALE, NAME, PREVIEW_URL, new ArrayList<>());

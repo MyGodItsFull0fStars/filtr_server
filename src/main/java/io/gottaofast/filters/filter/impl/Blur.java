@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Blur extends AbstractFilter {
     private static final String NAME = "Blur";
-    private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
+    private static final String PREVIEW_URL = "https://www.lunapic.com/editor/premade/blur.gif";
 
     public Blur() {
         FilterSettingSlider intensity = new FilterSettingSlider("Intensity", "0", "100", 0, 100, 50, 5);

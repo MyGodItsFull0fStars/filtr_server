@@ -13,7 +13,7 @@ import java.util.List;
 
 public class EdgeDetection extends AbstractFilter {
     private static final String NAME = "Edge Detection";
-    private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
+    private static final String PREVIEW_URL = "http://www.ctralie.com/Teaching/EdgeCornerBlob/lenatl0.05/image.png";
 
     public EdgeDetection() {
         FilterSettingSlider intensity = new FilterSettingSlider("Intensity", "0", "100", 0, 100, 50, 5);
