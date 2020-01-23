@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class DeepFry extends AbstractFilter {
     private static final String NAME = "Deep Fry";
-    private static final String PREVIEW_URL = "https://i.redd.it/cmi9z289res11.jpg";
+    private static final String PREVIEW_URL = "https://i.redd.it/9bz79emmb1z31.jpg";
 
     public DeepFry() {
         FilterSettingSlider jpegRepetitions = new FilterSettingSlider("JPEG Repetitions", "0", "10", 0, 10, 2, 1);
