@@ -87,7 +87,6 @@
                                 <rule>
                                     <element>CLASS</element>
                                     <excludes>
-<!--                                        <exclude>com.asimio.demo.Application</exclude>-->
                                     </excludes>
                                     <limits>
                                         <limit>
