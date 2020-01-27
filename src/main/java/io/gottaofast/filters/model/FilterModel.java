@@ -18,9 +18,10 @@ public class FilterModel {
 
     /**
      * Create a FilterModel that contains all relevant information for a filter
-     * @param id The Filters ID that identifies the filter type
-     * @param name The filter name
-     * @param imgUrl The URL for the preview image
+     *
+     * @param id             The Filters ID that identifies the filter type
+     * @param name           The filter name
+     * @param imgUrl         The URL for the preview image
      * @param filterSettings A list containing all relevant settings for the filter
      */
     public FilterModel(Filters id, String name, String imgUrl, List<FilterSetting> filterSettings) {
@@ -33,8 +34,9 @@ public class FilterModel {
     /**
      * Create a FilterModel that contains all relevant information for a filter.
      * This creates an empty settings list, in case the filter has no additional settings
-     * @param id The Filters ID that identifies the filter type
-     * @param name The filter name
+     *
+     * @param id     The Filters ID that identifies the filter type
+     * @param name   The filter name
      * @param imgUrl The URL for the preview image
      */
     public FilterModel(Filters id, String name, String imgUrl) {
@@ -60,7 +62,17 @@ public class FilterModel {
         return filterSettings;
     }
 
-    public void addFilterSetting(FilterSetting filterSetting) {
-        filterSettings.add(filterSetting);
+    /**
+     * Adds a FilterSetting to the FilterModel
+     *
+     * @param filterSetting to be added
+     * @return this FilterModel object for fluent adding of FilterSettings
+     * @see FilterModel
+     * @see FilterSetting
+     */
+    public FilterModel addFilterSetting(FilterSetting filterSetting) {
+        if (filterSetting != null)
+            filterSettings.add(filterSetting);
+        return this;
     }
 }
