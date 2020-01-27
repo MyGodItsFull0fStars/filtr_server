@@ -45,6 +45,7 @@ public class Jpegify extends AbstractFilter {
             writer.dispose();
             return ImageIO.read(new ByteArrayInputStream(bos.toByteArray()));
         } catch (IOException e) {
+            logger.error("[apply] - IOException: ", e);
             writer.dispose();
             return new BufferedImage(0, 0, 0);
         }
