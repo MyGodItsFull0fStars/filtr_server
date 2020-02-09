@@ -10,13 +10,13 @@ public abstract class FilterSetting {
 
     /**
      * Create a new FilterSetting
+     *
      * @param type The SettingType of the setting, e.g. CHECKBOX or SLIDER
      * @param name The name of the setting
      */
     public FilterSetting(SettingTypes type, String name) {
-        if (name == null) name = "";
         this.type = type;
-        this.name = name;
+        this.name = name != null ? name : "";
     }
 
     public final String getName() {
